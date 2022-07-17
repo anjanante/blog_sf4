@@ -12,8 +12,11 @@
     <ul>
     {% for article in articles %}
         <li>
-            <h2>{{ article.titre}}</h2>
-            <div>{{ article.contenu|raw}}</div>
+            <h2>{{ article.titre}} {{article.createdAt|date('d-m-Y')}}</h2>
+            <div>
+            <img src="{{article.featuredImage}}"  alt="aaaaaa"><br>
+            {{ article.contenu|raw}}
+            </div>
         </li>
     {% endfor %}
     </ul>
